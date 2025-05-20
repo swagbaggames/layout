@@ -1,0 +1,31 @@
+{
+    "name": "@swagbaggames/layout",
+    "version": "0.1.0",
+    "description": "resizing and scaling of screen",
+    "homepage": "https://github.com/swagbaggames/layout#readme",
+    "bugs": {
+        "url": "https://github.com/swagbaggames/layout/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swagbaggames/layout.git"
+    },
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "prepare": "npm run build",
+        "build": "npm run clean && npx tsc",
+        "clean": "rm -rf ./lib",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "pixi.js": "^8.9.2",
+        "typed-signals": "^3.0.0",
+        "typescript": "^5.8.3"
+    }
+}
