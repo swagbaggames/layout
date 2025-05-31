@@ -47,6 +47,32 @@ export class ARLayout {
         return { padding }
     }
 
+    public get computed() {
+        const position = this.position
+        const scale = this.scale
+        const leftBounds = -position.x / scale
+        const rightBounds = leftBounds + window.innerWidth / scale
+        const topBounds = -position.y / scale
+        const bottomBounds = topBounds + window.innerHeight / scale
+        return {
+            position,
+            centre: {
+                screen: { x: (leftBounds + rightBounds) / 2, y: (topBounds + bottomBounds) / 2 },
+                main: { x: this.width / 2, y: this.height / 2 },
+            },
+            size: {
+                width: rightBounds - leftBounds,
+                height: bottomBounds - topBounds,
+            },
+            bounds: {
+                left: leftBounds,
+                right: rightBounds,
+                top: topBounds,
+                bottom: bottomBounds,
+            },
+        }
+    }
+
     // public get computed(): ComputedProperties {
     //     const { padding } = this.current
     //     const { left, right, top, bottom } = padding

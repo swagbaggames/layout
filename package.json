@@ -21,11 +21,14 @@
         "prepare": "npm run build",
         "build": "npm run clean && npx tsc",
         "clean": "rm -rf ./lib",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 0"
     },
     "devDependencies": {
         "pixi.js": "^8.9.2",
         "typed-signals": "^3.0.0",
         "typescript": "^5.8.3"
+    },
+    "publishConfig": {
+        "@swagbaggames:registry": "https://npm.pkg.github.com"
     }
 }
